@@ -1,0 +1,108 @@
+.todos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    user-select: none;
+  }
+  
+  .todo-item {
+    border-radius: 10px;
+    border: 1px solid #e0e0e0; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    width: 400px;
+    height: 180px;
+    background-color: #ffffff;
+    padding: 20px;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    transition: 0.6s ease-in;
+  }
+
+
+.todo-item h3 {
+  margin-bottom: 10px;
+}
+
+.todo-item::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -15px;
+    right: -15px;
+    height: 245px;
+    width: 25px;
+    border-radius: 32px;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    transition: transform 0.25s ease-out;
+}
+
+.todo-item.completed::before {
+    background: #54C392; 
+}
+
+.todo-item.incomplete::before {
+    background: #fa7e92; 
+}
+  .todo-item:hover::before {
+    transition-delay: 0.2s;
+    transform: scale(40);
+  }
+  
+  .todo-item:hover {
+    color: #ffffff;
+  }
+  
+
+
+.todo-delete img {
+  height: 25px;
+  width: 25px;
+}
+
+.todo-delete button {
+    border: none;
+    background: none; 
+    
+  }
+
+
+  
+  .todo-checkbox {
+    width: 25px; 
+    height: 25px; 
+  }
+  
+
+
+  .todo-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 50px;
+  }
+
+
+  @media (max-width: 1200px) {
+    .todos-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 768px) {
+    .todos-grid {
+        grid-template-columns: 1fr; 
+    }
+    .todo-item {
+        height: auto; 
+    }
+}

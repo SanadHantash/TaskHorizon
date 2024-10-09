@@ -1,0 +1,119 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 1rem;
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
+    position: relative;
+    max-width: 90%; 
+    max-height: 90%; 
+    overflow: auto; 
+}
+
+.close-button {
+    position: absolute;
+    top: 10px; 
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: coral;
+}
+
+.flip-card {
+    width: 80%; 
+    max-width: 190px; 
+    height: auto; 
+    aspect-ratio: 3/4; 
+    perspective: 1000px;
+    margin: 0 auto; 
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
+    backface-visibility: hidden;
+    border-radius: 1rem;
+}
+
+.flip-card-front {
+    background: linear-gradient(120deg, bisque, rgba(255, 127, 80, 0.603));
+    color: coral;
+}
+
+.flip-card-back {
+    background: #54C392;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.flip-card-completed {
+    background: #54C392;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.flip-card-incompleted {
+    background: #fa7e92;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.title {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .close-button {
+        font-size: 20px; 
+    }
+
+    .title {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .close-button {
+        font-size: 18px; 
+    }
+
+    .modal-content {
+        padding: 10px; 
+    }
+
+    .title {
+        font-size: 0.8em;
+    }
+}

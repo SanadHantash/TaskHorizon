@@ -1,0 +1,56 @@
+
+.todo-form {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  
+
+  .todo-textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+
+
+  .submit-button {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #1e3a8a;
+    background-color: transparent;
+    color: #1e3a8a;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #1e3a8a;
+    color: white;
+  }
+  
+
+  @media (max-width: 768px) {
+    .todo-form {
+      max-width: 90%; 
+      padding: 15px; 
+    }
+  
+    .todo-textarea {
+      font-size: 16px; 
+    }
+  
+    .submit-button {
+      padding: 8px; 
+      font-size: 14px;
+    }
+  }
